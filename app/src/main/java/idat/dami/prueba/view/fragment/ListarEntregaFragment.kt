@@ -5,17 +5,43 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import idat.dami.prueba.R
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import idat.dami.prueba.databinding.FragmentListarEntregaBinding
+import idat.dami.prueba.view.adapters.EntregasAdapter
+import idat.dami.prueba.viewmodel.EntregasViewModel
 
 class ListarEntregaFragment : Fragment() {
+
+
+
+    private  var _binding : FragmentListarEntregaBinding? = null
+    private val  binding get() = _binding!!
+    private lateinit var entregasViewModel: EntregasViewModel
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_listar_entrega, container, false)
+        _binding = FragmentListarEntregaBinding
+            .inflate(inflater, container,false)
+        binding.rvEntregas.layoutManager = LinearLayoutManager(
+            requireActivity())
+        entregasViewModel = ViewModelProvider(requireActivity())
+            .get(EntregasViewModel::class.java)
+        listarEntregas()
+
+        return binding.root
+    }
+
+    fun listarEntregas(){
+        entregasViewModel.listarEntregas().observe(
+            viewLifecycleOwner, Observer {
+                    response -> binding.rvEntregas.adapter = EntregasAdapter(response)
+            }
+        )
     }
 
 
