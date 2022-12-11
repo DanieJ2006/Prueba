@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import idat.dami.prueba.databinding.ItemHistorialBinding
-import idat.dami.prueba.retrofit.response.ReponseHistorial
+import idat.dami.prueba.retrofit.response.ResponseEntrega
 
-class HistorialAdapter (private var listarHistorial: List<ReponseHistorial>)
+class HistorialAdapter (private var listarHistorial: List<ResponseEntrega>)
     : RecyclerView.Adapter<HistorialAdapter.ViewHolder>(){
 
     inner class ViewHolder(val binding: ItemHistorialBinding)
@@ -22,9 +22,9 @@ class HistorialAdapter (private var listarHistorial: List<ReponseHistorial>)
         with(holder){
             with(listarHistorial[position]){
                 binding.ivHistorial.drawable
-                binding.tvNomApeConsignadoH.text = consignado.nombre.toString() + " " + consignado.apellido.toString()
-                binding.tvNomApeRemitenteH.text = remitente.nombre.toString() + " " + remitente.apellido.toString()
-                binding.tvDireccionRemitenteH.text = consignado.direccion.toString()
+                binding.tvNomApeConsignadoH.text = paquete.consignado.nombre.toString() + " " + paquete.consignado.apellido.toString()
+                binding.tvNomApeRemitenteH.text = paquete.remitente.nombre.toString() + " " + paquete.remitente.apellido.toString()
+                binding.tvDireccionRemitenteH.text = paquete.consignado.direccion.toString()
 
             }
         }
