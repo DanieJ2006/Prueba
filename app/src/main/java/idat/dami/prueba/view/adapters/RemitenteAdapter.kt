@@ -3,6 +3,7 @@ package idat.dami.prueba.view.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import idat.dami.prueba.databinding.ItemConsignadoBinding
 import idat.dami.prueba.databinding.ItemRemitenteBinding
 import idat.dami.prueba.retrofit.response.ResponseRemitente
@@ -22,11 +23,13 @@ class RemitenteAdapter (private var listarRemitentes: List<ResponseRemitente>)
     override fun onBindViewHolder(holder: RemitenteAdapter.ViewHolder, position: Int) {
         with(holder){
             with(listarRemitentes[position]){
+
                 binding.tvIdRemitente.text = idRemitente.toString()
                 binding.tvNombreRemitente.text = nombre
                 binding.tvApellidoRemitente.text = apellido
                 binding.tvDniRemitente.text = dni
                 binding.tvTelefonoRemitente.text = telefono
+
             }
         }
 

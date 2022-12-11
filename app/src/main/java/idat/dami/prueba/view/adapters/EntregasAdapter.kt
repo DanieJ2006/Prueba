@@ -4,6 +4,7 @@ package idat.dami.prueba.view.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import idat.dami.prueba.databinding.ItemEntregasBinding
 import idat.dami.prueba.retrofit.response.ResponseEntrega
 
@@ -22,9 +23,10 @@ class EntregasAdapter(private var lstentregas: List<ResponseEntrega>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder){
             with(lstentregas[position]){
-                binding.tvDireccion.text = paquete.consignado.direccion.toString()
-                binding.tvConsignado.text = paquete.consignado.nombre.toString()
-
+                binding.iventrega.drawable
+                binding.tvnombresRemitente.text = paquete.remitente.nombre.toString()+" " + paquete.remitente.apellido.toString()
+                binding.tvnombresConsignado.text = paquete.consignado.nombre.toString()+" " + paquete.consignado.apellido.toString()
+                binding.tvdireccionConsignado.text = paquete.consignado.direccion.toString()
             }
         }
 
