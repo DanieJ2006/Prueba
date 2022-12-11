@@ -1,5 +1,6 @@
 package idat.dami.prueba.retrofit
 
+import idat.dami.prueba.retrofit.response.ReponseHistorial
 import idat.dami.prueba.retrofit.response.ResponseConsignado
 import idat.dami.prueba.retrofit.response.ResponseEntrega
 import idat.dami.prueba.retrofit.response.ResponseRemitente
@@ -16,5 +17,8 @@ interface AzCourierServicio {
 
     @GET("remitente/listar")
     fun listarRemitentes(): Call<List<ResponseRemitente>>
+
+    @GET("paquete/historial/listar")
+    fun listarHistorial(): Call<List<ReponseHistorial>>
 
 }

@@ -10,56 +10,50 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="142dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivhistorial"
-            android:layout_width="0dp"
-            android:layout_height="109dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/tvApellidoRemitente"
+            android:id="@+id/ivHistorial"
+            android:layout_width="129dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/cajaabierta"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/courier" />
-
-        <TextView
-            android:id="@+id/tvIdRemitente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="TextView"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ivhistorial"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvNombreRemitente"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="100dp"
-            android:text="TextView"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvIdRemitente"
-            app:layout_constraintTop_toBottomOf="@+id/tvIdRemitente" />
-
-        <TextView
-            android:id="@+id/tvApellidoRemitente"
+            android:id="@+id/tvNomApeConsignadoH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="231dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="149dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/ivhistorial"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvNomApeRemitenteH"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivhistorial"
-            app:layout_constraintTop_toBottomOf="@+id/tvNombreRemitente" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNomApeRemitenteH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/tvDireccionRemitenteH"
+            app:layout_constraintStart_toStartOf="@+id/tvNomApeConsignadoH"
+            app:layout_constraintTop_toBottomOf="@+id/tvNomApeConsignadoH" />
+
+        <TextView
+            android:id="@+id/tvDireccionRemitenteH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvNomApeRemitenteH"
+            app:layout_constraintTop_toBottomOf="@+id/tvNomApeRemitenteH" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
