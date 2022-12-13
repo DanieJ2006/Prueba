@@ -103,18 +103,17 @@ class DetalleEntregaActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun ubicacion(){
-        val ubicacion = binding.tvDireccionDE.text.toString()
-        val delim = " "
-
-        val list = ubicacion.split(delim)
-        val map = "http://maps.google.com/maps?q="+list[0]+"+"+list[1]+"+"+list[2]
+        val ubicacion = binding.tvDireccionDE.text.toString() +
+                " " + binding.tvDistritoDE.text.toString()
+        val map = "http://maps.google.com/maps?q="+ubicacion
         val i = Intent(Intent.ACTION_VIEW, Uri.parse(map))
         startActivity(i)
     }
 
     private fun mensaje(){
         val nrotelfono = binding.tvTelefonoDE.text.toString()
-        val mensajae = "PRONTO LLEGAREMOS A TU DESTINO, AZCURIER :)"
+        val nombre = binding.tvConsignadoDE.text.toString()
+        val mensajae = "HOLA ${nombre} TU PAQUETE ESTA EN CAMINO, AZCOURIER :)"
         try {
             val sms: SmsManager = SmsManager.getDefault()
             sms.sendTextMessage(nrotelfono, null, "$mensajae", null, null)

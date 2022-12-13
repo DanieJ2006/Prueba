@@ -34,7 +34,7 @@ class EntregasAdapter(private var lstentregas: List<ResponseEntrega>)
                     val consignado = paquete.consignado.nombre + " " + paquete.consignado.apellido
                     val direccion = paquete.consignado.direccion
                     val distrito = paquete.consignado.distrito
-                    val telefono = paquete.remitente.telefono
+                    val telefono = paquete.consignado.telefono
                     val codigocaja = paquete.idPaquete
                     val context = binding.root.context
                     val intent = Intent(context, DetalleEntregaActivity::class.java)
